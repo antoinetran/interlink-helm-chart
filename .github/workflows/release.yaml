@@ -28,7 +28,7 @@ jobs:
         uses: bitdeps/helm-oci-charts-releaser@v0.1.0
         with:
             oci_registry: ghcr.io/${{ github.repository }}
-            oci_username: $GITHUB_USER
+            oci_username: ${{ github.actor }}
             charts_dir: ./
             oci_password: ${{ secrets.GITHUB_TOKEN }}
             github_token: ${{ secrets.GITHUB_TOKEN }}
