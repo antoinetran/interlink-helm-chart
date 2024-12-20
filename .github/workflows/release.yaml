@@ -27,7 +27,7 @@ jobs:
       - name: Configure Chart version
         run: |
           set -x
-          sed ./interlink/Chart.yaml -i -e "s,^version.*,version=${{ github.ref }}"
+          sed ./interlink/Chart.yaml -i -e "s,^version.*,version: ${{ github.ref_name }},g"
 
       - name: Run chart-releaser
         uses: bitdeps/helm-oci-charts-releaser@v0.1.0
@@ -37,7 +37,7 @@ jobs:
             charts_dir: ./
             oci_password: ${{ secrets.GITHUB_TOKEN }}
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            #tag: ${{ github.ref }}
+            #tag: ${{ github.ref_name }}
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
