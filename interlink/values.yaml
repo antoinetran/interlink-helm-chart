@@ -49,7 +49,8 @@ kubernetesApiExposed:
   serviceType: NodePort
   serviceNodePort: 30443
   endpointPort: 6443
-  # Array to be defined
+  # Array to be defined, use
+  # kubectl get endpoints kubernetes -o jsonpath='{.subsets[0].addresses[*].ip}'
   endpointsIps: null
 
 sshBastion:
