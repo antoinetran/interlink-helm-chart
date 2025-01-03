@@ -43,16 +43,6 @@ plugin:
   address: ""
   port: 3000
 
-kubernetesApiExposed:
-  enabled: false
-  # For now, only NodePort is an accepted value.
-  serviceType: NodePort
-  serviceNodePort: 30443
-  endpointPort: 6443
-  # Array to be defined, use
-  # kubectl get endpoints kubernetes -o jsonpath='{.subsets[0].addresses[*].ip}'
-  endpointsIps: null
-
 sshBastion:
   enabled: false
   image: lscr.io/linuxserver/openssh-server:latest 
