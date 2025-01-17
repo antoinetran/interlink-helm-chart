@@ -12,6 +12,12 @@ data:
     InterlinkURL: {{ .Values.interlink.address | quote }}
     InterlinkPort: {{ .Values.interlink.port | quote }}
     {{- end }}
+    {{- if .Values.interlink.kubernetesApiAddr }}
+    KubernetesApiAddr: {{.Values.interlink.kubernetesApiAddr | quote }}
+    {{- end }}
+    {{- if .Values.interlink.kubernetesApiPort }}
+    KubernetesApiPort: {{.Values.interlink.kubernetesApiPort | quote }}
+    {{- end }}
     ExportPodData: {{ .Values.interlink.exportPodData }}
     VerboseLogging: true
     ErrorsOnlyLogging: false
