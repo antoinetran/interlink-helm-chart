@@ -28,6 +28,7 @@ jobs:
         run: |
           set -x
           sed ./interlink/Chart.yaml -i -e "s,^version.*,version: ${{ github.ref_name }},g"
+          cat ./interlink/Chart.yaml
 
       - name: Run chart-releaser
         uses: bitdeps/helm-oci-charts-releaser@v0.1.0
