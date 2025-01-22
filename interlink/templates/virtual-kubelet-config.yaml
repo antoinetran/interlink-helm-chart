@@ -15,6 +15,10 @@ data:
     {{- if .Values.interlink.kubernetesApiAddr }}
     KubernetesApiAddr: {{.Values.interlink.kubernetesApiAddr | quote }}
     {{- end }}
+    {{- if .Values.interlink.kubernetesApiCaCrt }}
+    KubernetesApiCaCrt: |
+      {{.Values.interlink.kubernetesApiCaCrt | indent 6 }}
+    {{- end }}
     {{- if .Values.interlink.kubernetesApiPort }}
     KubernetesApiPort: {{.Values.interlink.kubernetesApiPort | quote }}
     {{- end }}

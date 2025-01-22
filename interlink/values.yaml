@@ -16,6 +16,7 @@ interlink:
   port: 4000
   kubernetesApiAddr: ""
   kubernetesApiPort: ""
+  kubernetesApiCaCrt: ""
 
 virtualNode:
   image: ghcr.io/intertwin-eu/interlink/virtual-kubelet-inttw:latest 
