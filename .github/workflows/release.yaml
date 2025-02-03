@@ -26,6 +26,7 @@ jobs:
           echo "GITHUB_ACTOR: $GITHUB_ACTOR"
 
           echo GITHUB_REPOSITORY_LOWERCASE="$(echo ${GITHUB_REPOSITORY} | tr '[:upper:]' '[:lower:]' )"
+          echo "GITHUB_REPOSITORY_LOWERCASE: $GITHUB_REPOSITORY_LOWERCASE"
 
       - name: Configure Git
         run: |
