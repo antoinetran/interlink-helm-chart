@@ -20,7 +20,7 @@ data:
     KubernetesApiPort: {{.Values.interlink.kubernetesApiPort | quote }}
     {{- end }}
     {{- if .Values.interlink.kubernetesApiCaCrt }}
-    KubernetesApiCaCrt: |
+    KubernetesApiCaCrt: |{{ printf "\n" }}
       {{- .Values.interlink.kubernetesApiCaCrt | indent 6}}
     {{- end }}
     {{- if .Values.interlink.disableProjectedVolumes }}
@@ -145,8 +145,8 @@ metadata:
   name: "{{ .Values.nodeName }}-plugin-config"
   namespace: {{ .Release.Namespace }}
 data:
-  plugin.yaml: |
-    {{ if kindIs "string" .Values.plugin.config }}
+  plugin.yaml: |{{ printf "\n" }}
+    {{- if kindIs "string" .Values.plugin.config }}
       {{- .Values.plugin.config | indent 4 }}
     {{- else }}
       {{- .Values.plugin.config | toYaml | indent 4 }}
